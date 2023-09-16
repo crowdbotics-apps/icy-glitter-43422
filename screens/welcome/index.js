@@ -1,64 +1,63 @@
-import React from "react"
-import {
-  View,
-  Image,
-  Text,
-  ScrollView,
-  SafeAreaView,
-  StyleSheet
-} from "react-native"
+import React from 'react';
+import { SafeAreaView, View, Text, Image, StyleSheet } from 'react-native';
 
 const WelcomeScreen = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollView}>
-        <View style={styles.group} />
-        <View style={styles.group}>
-          <Image style={styles.logo} source={require("./logo.png")} />
-          <Text style={styles.text}>
-            Let's build something amazing together!
-          </Text>
-        </View>
-        <Text style={styles.footer}>Made with ❤️ by Crowdbotics</Text>
-      </ScrollView>
-    </SafeAreaView>
-  )
-}
+  return <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Welcome to Health & Wellness</Text>
+      </View>
+      <View style={styles.content}>
+        <Image style={styles.image} source={{
+        uri: 'https://tinyurl.com/42evm3m3'
+      }} />
+        <Text style={styles.text}>Your journey to a healthier life starts here.</Text>
+      </View>
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>Let's get started!</Text>
+      </View>
+    </SafeAreaView>;
+};
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#F8F8FC",
-    height: "100%"
-  },
-  scrollView: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 20
+    backgroundColor: '#fff'
   },
-  group: {
-    alignItems: "center"
+  header: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  logo: {
-    height: 180,
-    width: 180,
-    padding: 40,
-    borderRadius: 30,
-    margin: 40
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    width: 231,
+    height: 32,
+    textAlign: "center"
+  },
+  content: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  image: {
+    width: 220,
+    height: 131
   },
   text: {
-    textAlign: "center",
-    fontSize: 28,
-    color: "#828AB0",
-    fontWeight: 700
+    marginTop: 20,
+    fontSize: 18,
+    textAlign: 'center',
+    paddingHorizontal: 10
   },
   footer: {
-    textAlign: "center",
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  footerText: {
     fontSize: 18,
-    color: "#828AB0",
-    fontWeight: 700,
-    marginBottom: 20
+    color: 'blue'
   }
-})
-
-export default WelcomeScreen
+});
+export default WelcomeScreen;
